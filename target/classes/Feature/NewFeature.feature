@@ -17,17 +17,17 @@
 ## (Comments)
 #Sample Feature Definition Template
 @tag
-Feature: Title of your feature
-  I want to use this template for my feature file
+Feature: Test for Cucumber Test
+
 
   @tag1
-  Scenario: Title of your scenario
+  Scenario: Check title of Demo qa
     Given I am on chrome homepage
     When try to open demo qa url
     Then i am able to open demo qa url
 
   @tag2
-  Scenario: New test
+  Scenario: New test 
     Given I want to write a step with precondition
     When I complete action
     Then I validate the outcomes
