@@ -20,13 +20,13 @@
 Feature: Title of your feature
   I want to use this template for my feature file
 
-  #@tag1
-  #Scenario: Title of your scenario
-    #Given I am on chrome homepage
-    #When try to open demo qa url
-    #Then i am able to open demo qa url
+  @tag1
+  Scenario: Title of your scenario
+    Given I am on chrome homepage
+    When try to open demo qa url
+    Then i am able to open demo qa url
 
-  #@tag2
+  @tag2
   Scenario: New test
     Given I want to write a step with precondition
     When I complete action
