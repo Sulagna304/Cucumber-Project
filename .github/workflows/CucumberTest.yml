@@ -31,7 +31,7 @@ jobs:
     - name: Upload Junit results in BrowserStack and print the logs in a file
       run: |
             curl -X POST https://c4j.cucumber.io/ci/rest/api/results \
-            -H 'authorization: Bearer ${{ secrets.Token }} \
+            -H 'authorization: Bearer ${{ secrets.Token }}' \
             -H 'content-type: multipart/form-data' \
             -F 'results_files[]'=@results1.json \
             -F 'results_files[]'=@results2.json \
