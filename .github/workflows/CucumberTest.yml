@@ -38,7 +38,7 @@ jobs:
                git add target/cucumber-reports/Cucumber.json
                git commit -m "Adding latest cucumber json"
                git config --global pull.ff only 
-               git push origin HEAD:master --force
+               git push origin HEAD:main --force
                
     - name: Upload Junit results in BrowserStack and print the logs in a file
       run: |
