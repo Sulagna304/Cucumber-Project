@@ -1,6 +1,6 @@
 
 
-name: CucumberJavaProject
+name: CucumberJavaProjectNew
 
 on: 
   pull_request:
