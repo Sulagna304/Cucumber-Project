@@ -41,7 +41,7 @@ jobs:
       run: |
                git config --global user.email "${{ secrets.GITHUBEMAIL }}"
                git config --global user.name "${{ secrets.GITHUBUSERNAME }}"
-               git add target/cucumber-reports/Cucumber.json
+               git add .
                git commit -m "Adding latest cucumber json"
                git config --global pull.ff only 
                git push origin HEAD:main --force            
