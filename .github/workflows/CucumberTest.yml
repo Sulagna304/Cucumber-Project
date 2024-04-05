@@ -27,15 +27,7 @@ jobs:
 
     - name: Run with Cucumber
       continue-on-error: true
-      run: mvn test -Dcucumber.options="src/test/resources/features/NewFeature.feature"
-   
-    - name: Upload Json results in Cucumber for JIRA plugin
-      run: |
-            curl -X POST https://c4j.cucumber.io/ci/rest/api/results \
-            -H 'authorization: Bearer ${{ secrets.Token }}' \
-            -H 'content-type: multipart/form-data' \
-            -F 'results_files[]=@"target/cucumber-reports/Cucumber.json"' \
-            -F language=jvm 
+      run: mvn test -Dcucumber.options="src/test/resources/features/NewFeature.feature" 
 
     - name: git action adding test report
       run: |
@@ -46,5 +38,11 @@ jobs:
                git config --global pull.ff only 
                git push origin HEAD:main --force            
                
-
+    - name: Upload Json results in Cucumber for JIRA plugin
+      run: |
+            curl -X POST https://c4j.cucumber.io/ci/rest/api/results \
+            -H 'authorization: Bearer ${{ secrets.Token }}' \
+            -H 'content-type: multipart/form-data' \
+            -F 'results_files[]=@"target/cucumber-reports/Cucumber.json"' \
+            -F language=jvm
            
