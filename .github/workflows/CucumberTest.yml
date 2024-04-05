@@ -30,15 +30,6 @@ jobs:
       continue-on-error: true
       run: mvn test -Dcucumber.options="src/test/resources/features/NewFeature.feature"
 
-    - name: git action adding test report
-      run: |
-               git config --global user.email "${{ secrets.GITHUBEMAIL }}"
-               git config --global user.name "${{ secrets.GITHUBUSERNAME }}"
-               git add target/cucumber-reports/Cucumber.json
-               git commit -m "Adding latest cucumber json"
-               git config --global pull.ff only 
-               git push origin HEAD:main --force
-
     - name: Upload Json results in JIRA plugin
       run: |
             curl -X POST https://c4j.cucumber.io/ci/rest/api/results \
