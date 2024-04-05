@@ -1,5 +1,5 @@
 
-name: CucumberJavaProjectMaven
+name: CucumberJavaProject
 
 on: 
   pull_request:
@@ -29,7 +29,7 @@ jobs:
       continue-on-error: true
       run: mvn test -Dcucumber.options="src/test/resources/features/NewFeature.feature"
    
-    - name: Upload Json results in Cucumber JIRA plugin
+    - name: Upload Json results in Cucumber for JIRA plugin
       run: |
             curl -X POST https://c4j.cucumber.io/ci/rest/api/results \
             -H 'authorization: Bearer ${{ secrets.Token }}' \
