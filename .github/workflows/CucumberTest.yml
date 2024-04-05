@@ -1,6 +1,6 @@
 
 
-name: CucumberJavaProjectTest
+name: CucumberJavaProjectTestNew
 
 on: 
   pull_request:
