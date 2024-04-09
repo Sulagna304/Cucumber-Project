@@ -1,11 +1,7 @@
 
 name: CucumberJavaProjects
 
-on: 
-  pull_request:
-    types:
-      - opened
-      - synchronize
+on: push
 
 jobs:
   build:
