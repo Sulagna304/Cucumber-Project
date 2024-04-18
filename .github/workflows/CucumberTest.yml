@@ -1,5 +1,5 @@
 
-name: CucumberJavaProject
+name: CucumberJavaProjectMaven
 
 on: push
 
