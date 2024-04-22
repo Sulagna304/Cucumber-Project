@@ -24,6 +24,13 @@ jobs:
     - name: Run with Cucumber
       continue-on-error: true
       run: mvn test -Dcucumber.options="src/test/resources/features/NewFeature.feature" 
+
+    - name: Upload cucumber json test results
+      uses: actions/upload-artifact@v4
+      with:
+            name: Cucumber Json reports
+            path: "target/cucumber-reports/Cucumber.json"
+
  
     - name: Upload Json results in Cucumber for JIRA plugin
       run: |
