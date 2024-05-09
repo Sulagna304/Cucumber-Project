@@ -1,5 +1,5 @@
 
-name: CucumberJavaProjectTest
+name: CucumberJavaProject
 
 on: push
 
