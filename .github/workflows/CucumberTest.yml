@@ -44,6 +44,10 @@ jobs:
       run: |
         mkdir -p CucumberJson
         cp target/cucumber-reports/Cucumber.json CucumberJson/   
+
+    - name: Move HTML report to root
+      run: |
+        mv -Force target/cucumber-reports/Cucumber.json
  
     - name: Upload Json results in Cucumber for JIRA plugin
       run: |
