@@ -33,12 +33,6 @@ jobs:
                git commit -m "adding json reports"
                git config --global pull.ff only 
                git push origin HEAD:master --force
-               
-    - name: Upload cucumber json test results
-      uses: actions/upload-artifact@v4
-      with:
-            name: Cucumber Json reports
-            path: "target/cucumber-reports/Cucumber.json"
 
     - name: Copy HTML report
       run: |
@@ -48,7 +42,23 @@ jobs:
     - name: Move HTML report to root
       run: |
         mv -Force target/cucumber-reports/Cucumber.json
- 
+
+    - name: Commit and push changes
+      run:  |         
+            git config --global user.name "${{ secrets.GITHUBEMAIL }}"         
+            git config --global user.email "${{ secrets.GITHUBUSERNAME }}"         
+            git add "Cucumber.json"         
+            git commit -m "Pull json report from test-output folder"  
+            git config --global pull.ff only
+            git push origin HEAD:master --force    
+
+                
+    - name: Upload cucumber json test results
+      uses: actions/upload-artifact@v4
+      with:
+            name: Cucumber Json reports
+            path: "target/cucumber-reports/Cucumber.json"
+            
     - name: Upload Json results in Cucumber for JIRA plugin
       run: |
             curl -X POST https://c4j.cucumber.io/ci/rest/api/results \
