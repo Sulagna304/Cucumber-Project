@@ -31,6 +31,10 @@ jobs:
             name: Cucumber Json reports
             path: "target/cucumber-reports/Cucumber.json"
 
+    - name: Copy HTML report
+      run: |
+        mkdir -p CucumberJson
+        cp target/cucumber-reports/Cucumber.json CucumberJson/   
  
     - name: Upload Json results in Cucumber for JIRA plugin
       run: |
